@@ -1,0 +1,62 @@
+@import url(style.css);
+  
+ .classCon {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background: url(../assets/contact.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  
+  .myForm {
+    width: max(50%,550px);
+  }
+  
+  .classCon h1{
+    margin-block-start: 4.5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight:bolder;
+  }
+  
+  .myInput {
+    padding: 13px 21px 13px 20px;
+    margin: 12px 60px;
+    border-radius: 5px;
+    background-color:rgba(213, 246, 219, 0.7);
+    font-size: 1rem;
+    border:none;
+    outline:none;
+  }
+
+  .myInput::placeholder{
+    color:black;
+    font-weight:bolder;
+  }
+
+  .btn {
+    font-weight: bold;
+    width: 87px;
+    margin: auto;
+    background-color: rgb(153, 153, 153);
+    height: 38px;
+    border: 2px rgb(31, 29, 29) ridge;
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 20px;
+  }
+
+
+@media only screen and (max-width: 1140px) {
+  #h1 {
+      margin-block-start: 2em;
+      font-size: 1.7rem;
+      margin: 0;
+ }
+}
+
+@media only screen and (max-width: 480px) {
+  .myForm{
+    width:100%;
+  }
+}

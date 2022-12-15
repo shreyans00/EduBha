@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Register</title>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <span class="sign"><a href="/sign_in">Login / Register</a></span>
+
+    <div class="classCon" id="Contact">
+        <h1>REGISTER HERE</h1>
+        <form class="myForm classCon" action="/register" method="POST">
+            <input class="myInput" type="text" name="firstname" placeholder="First Name *" required /><b><span
+                    class="err"></span></b>
+            <input class="myInput" type="text" name="lastname" placeholder="Last Name" />
+            <input class="myInput" type="text" name="username" placeholder="Username *" required />
+            <input class="myInput" type="email" name="email" placeholder="Your Email *" required />
+            <input class="myInput" type="phone" name="phone" placeholder="Your Phone" />
+            <input class="myInput" type="number" name="age" placeholder="Your Age" />
+            <div class="myInput">
+                <label name="country"><b>Select Country</b></label>
+                <select name="country" class="myInput">
+                    <option>India</option>
+                    <option>Russia</option>
+                    <option>Pakistan</option>
+                    <option>England</option>
+                </select>
+            </div>
+            <div class="myInput">
+                <label name="gender"><b>Your Gender : </b></label>
+                <input type="radio" name="gender" /> Male
+                <input type="radio" name="gender" /> Female
+            </div>
+            <input class="myInput" type="password" name="password" placeholder="Password *" required />
+            <input class="myInput" type="password" name="cpassword" placeholder="Confirm Password *" required />
+            <textarea class="myInput" name="desc" placeholder="Your queries (Optional)" rows="5"></textarea>
+            <button class="btn" type="button" onclick="alert('You cannot make any change further')">Click Me!</button>
+            <input class="btn" type="submit" value="Register" />
+        </form>
+    </div>
+
+    {{>footer}}
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

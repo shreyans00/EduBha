@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="css/sign_in.css">
+    <title>Sign-in</title>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <div class="container">
+        <h1>Login to Educate-Bharat</h1>
+        <form action="/login" method="POST">
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" class="type" id="email" placeholder="Enter Your Email"></input>
+            </div>
+            <div class="box">
+                <i class="fas fa-key"></i>
+                <input type="password" name="password" class="type" id="password"
+                    placeholder="Enter Your Password"></input>
+            </div>
+            <input type="submit" value="Sign In" class="btn-page"></input>
+        </form>
+    </div>
+
+    <section id="register">
+        <div class="remind">
+            <h3>Register asap to get 15% off on all courses</h3>
+            <div class="time">
+                <div class="date">
+                    2<br>Days
+                </div>
+                <div class="date">
+                    23<br>Hours
+                </div>
+                <div class="date">
+                    04<br>Minutes
+                </div>
+                <div class="date">
+                    51<br>Seconds
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

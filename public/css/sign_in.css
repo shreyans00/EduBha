@@ -1,0 +1,138 @@
+@import url(style.css);
+  
+  body {
+    background: url(../assets/bg_sign.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .container {
+    color: white;
+    display:block;
+    margin: 10em auto;
+    max-width:30%;
+  }
+  
+  .container h1 {
+    font-family: "Nunito", sans-serif;
+    border-bottom: 4px solid rgb(136, 42, 136);
+    margin-bottom: 20px;
+    font-size: 2em;
+    padding-block: 1em;
+  }
+  
+  .type {
+    background: none;
+    border-bottom: 2px solid purple;
+    outline: none;
+    margin: 7px 12px;
+    font-size: 1em;
+    color: white;
+  }
+  
+  i {
+    margin-inline: 5px -7px;
+  }
+  
+  .btn-page {
+    cursor: pointer;
+    outline: none;
+    width: 24%;
+    margin-inline-start:3em;
+    padding: 6px;
+    background: none;
+    border-left:none;
+    border-top:none;
+    color: rgb(165, 160, 160);
+    border-radius: 8px;
+  }
+  
+  .btn-page:hover {
+    background-color: rgba(226, 190, 226, 0.411);
+    color: rgb(58, 54, 58);
+  }
+
+  /* deadline */
+
+  #register {
+    padding: 6vw 8vw;
+    background-image: linear-gradient(rgba(222, 170, 255, 0.23),rgba(174, 110, 197, 0.426),rgba(186, 119, 220, 0.504));
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  } 
+
+  #register .remind{
+    color:white;
+  }
+  #register h3{
+    font-size:1.7em;
+  }
+
+  #register .remind .time{
+    display:flex;
+    margin-top:2em;
+  }
+  
+  #register .remind .time .date{
+    text-align: center;
+    padding: 1em 2em;
+    background: rgba(255, 255, 255, 0.306);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    border-radius: 10px;
+    margin-inline:5px;
+    margin-block-end:10px;
+    border: 1px solid rgba(255, 255, 255, 0.528);
+    font-weight:500;
+  }
+  
+  @media (max-width:900px){
+    .container{
+      margin-block:7em;
+      max-width:60%;
+    }
+    .container h1{
+      font-size:1.7em;
+    }
+    .btn-page{
+      margin-inline-start:10em;
+    }
+  }
+
+  @media (max-width:550px){
+    .container{
+      margin-block:5em;
+      max-width:60%;
+    }
+    .container h1{
+      font-size:1.4em;
+    }
+
+    .btn-page {
+      width: 50%;
+    }
+
+    #register h3{
+      font-size:1em;
+    }
+
+    #register .remind .time{
+      display:flex;
+      font-size:0.5em;
+    }
+    
+    #register .remind .time .date{
+      padding: 0.5em 1em;
+      font-size:1.5em;
+      display:block;
+      margin:auto;
+    }
+  }
+
+
+  #demo{
+    font-size: 500px;
+    color:rgb(244, 9, 9);
+  }
