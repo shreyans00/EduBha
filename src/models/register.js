@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -6,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const studSchema = new mongoose.Schema({
     firstname: {
         type: String,
-        // required: true
+        // required: [true, "Please enter your Name"]
     },
     lastname: {
         type: String,
@@ -17,7 +18,12 @@ const studSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        // required: true
+        required: true,
+        validate(val) {
+            if (!validator.isEmail(val)) {
+                throw new Error("Invalid email id");
+            }
+        }
     },
     phone: {
         type: Number,
@@ -34,7 +40,8 @@ const studSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        // minLength: [8, "Password must be atleast 8 characters long"]
     },
     confirmpassword: {
         type: String,
@@ -43,6 +50,22 @@ const studSchema = new mongoose.Schema({
     queries: {
         type: String,
     },
+    // date: {
+    //     type: Date,
+    //     default: Date.now
+    // },
+    // images: [
+    //     {
+    //         public_id: {
+    //             type: String,
+    //             required: true
+    //         },
+    //         url: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     }
+    // ],
     tokens: [{ // token dene ke liye ye schema mai daalna jruri hai
         token: {
             type: String,
@@ -63,7 +86,7 @@ studSchema.methods.generateAuthToken = async function () {
     }
 }
 
-// Hashing
+// // Hashing
 studSchema.pre("save", async function (next) {
     if (this.isModified("password")) {
         // console.log(`password is ${this.password}`);
@@ -73,7 +96,6 @@ studSchema.pre("save", async function (next) {
     }
     next();
 })
-
 
 // Creating collection 
 const Register = new mongoose.model("Register", studSchema);
